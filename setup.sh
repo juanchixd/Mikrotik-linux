@@ -1,13 +1,23 @@
-#! /bin/sh
+#!/bin/bash
 # Winbox Installer
 # Print error messages and defining error status with non-zero value
 errMsg() {
   echo "USAGE:
-To install
-sudo bash setup.sh install
+--------------------------------------------------------------------------------
+Spanish
+  Para instalar
+  sudo ./setup.sh install
 
-To remove
-sudo bash setup.sh remove"
+  Para desinstalar
+  sudo ./setup.sh remove
+--------------------------------------------------------------------------------
+English
+  To install
+  sudo ./setup.sh install
+
+  To remove
+  sudo ./setup.sh remove
+--------------------------------------------------------------------------------"
   exit 1
 }
 

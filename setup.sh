@@ -4,10 +4,10 @@
 errMsg() {
   echo "USAGE:
 To install
-sudo bash winbox-setup install
+sudo bash setup.sh install
 
 To remove
-sudo bash winbox-setup remove"
+sudo bash setup.sh remove"
   exit 1
 }
 
@@ -40,15 +40,8 @@ wbDl() {
     echo "Using previously downloaded winbox.exe"
   else
     echo -n "Downloading Winbox..."
-    URL="http:"$(curl -s https://mt.lv/winbox64 | grep -o //.*winbox.exe)
-    URLlenght=${#URL}
-    if [[ $URLlenght<3 ]]; then
-      echo "FAILED"
-      exit 1
-    else
-      wget -q -c -O winbox.exe $URL
-      echo "DONE"
-    fi
+    wget -q -c -O winbox.exe mt.lv/winbox64
+    echo "DONE"
   fi
 }
 
@@ -61,17 +54,15 @@ filesCp() {
       cp -f icons/winbox-128x128.png /usr/share/icons/hicolor/128x128/apps/winbox.png
       cp -f icons/winbox-16x16.png /usr/share/icons/hicolor/16x16/apps/winbox.png
       cp -f icons/winbox-192x192.png /usr/share/icons/hicolor/192x192/apps/winbox.png
-      cp -f icons/winbox-20x20.png /usr/share/icons/hicolor/20x20/apps/winbox.png
       cp -f icons/winbox-22x22.png /usr/share/icons/hicolor/22x22/apps/winbox.png
       cp -f icons/winbox-24x24.png /usr/share/icons/hicolor/24x24/apps/winbox.png
       cp -f icons/winbox-256x256.png /usr/share/icons/hicolor/256x256/apps/winbox.png
       cp -f icons/winbox-32x32.png /usr/share/icons/hicolor/32x32/apps/winbox.png
       cp -f icons/winbox-36x36.png /usr/share/icons/hicolor/36x36/apps/winbox.png
-      cp -f icons/winbox-40x40.png /usr/share/icons/hicolor/40x40/apps/winbox.png
+      cp -f icons/winbox-44x44.png /usr/share/icons/hicolor/44x44/apps/winbox.png
       cp -f icons/winbox-48x48.png /usr/share/icons/hicolor/48x48/apps/winbox.png
       cp -f icons/winbox-64x64.png /usr/share/icons/hicolor/64x64/apps/winbox.png
       cp -f icons/winbox-72x72.png /usr/share/icons/hicolor/72x72/apps/winbox.png
-      cp -f icons/winbox-8x8.png /usr/share/icons/hicolor/8x8/apps/winbox.png
       cp -f icons/winbox-96x96.png /usr/share/icons/hicolor/96x96/apps/winbox.png
       echo "DONE"
     else

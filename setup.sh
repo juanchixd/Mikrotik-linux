@@ -39,7 +39,7 @@ depInst() {
       echo "DONE"
     ;;
     *)
-      echo "FAILED"
+      echo "FAILED: Unsupported distribution $DISTRIBUTION"
       exit 1
     ;;
   esac

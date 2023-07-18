@@ -30,6 +30,10 @@ depInst() {
       dnf -q -y install wine wget > /dev/null 2>&1
       echo "DONE"
     ;;
+    'manjaro' | "arch" )
+      pamac install --no-confirm wine wget > /dev/null 2>&1
+      echo "DONE installing $DISTRIBUTION dependencies"
+    ;;
     'ubuntu' | 'debian' | '"elementary"' | 'linuxmint' | 'kali' )
       apt-get -q -y install wine wget > /dev/null 2>&1
       echo "DONE"
